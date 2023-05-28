@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
-import Article1 from '../../public/images/articles/pagination component in reactjs.jpg'
-import Article2 from '../../public/images/articles/create loading screen in react js.jpg'
+import dynamicCalender from '../../public/images/articles/dynamicCalender.jpeg'
+import TodoListJs from '../../public/images/articles/todo-list-js.jpeg'
 import passGenerator from "../../public/images/articles/passGenerator.jpeg"
 import qrGenerator from "../../public/images/articles/qrGenerator.jpeg"
 import Calculator from "../../public/images/articles/calculator.jpeg"
@@ -93,18 +93,18 @@ const articles = () => {
                     <AnimatedText text={"Code Can Change The World! "} className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
                     <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
                         <FeaturedArticle
-                            img={Article1}
-                            title={"Build A Custom Pagination Component In Reactjs From Scratch"}
-                            summary={"Learn how to build a custom pagination component in ReactJS from scratch . Follow this step-by-step guide to integrate Pagination component in your ReactJS project."}
-                            time={"9 min read"}
-                            link={"/"}
+                            img={dynamicCalender}
+                            title={"Dynamic Calender"}
+                            summary={"Learn how to build dyanmic calender in JAVASCRIPT from scratch . "}
+                            time={"15 min read"}
+                            link={"https://shehab-dynamic-calender.netlify.app/"}
                         />
                         <FeaturedArticle
-                            img={Article2}
-                            title={"Build A Custom Pagination Component In Reactjs From Scratch"}
-                            summary={"Learn how to build a custom pagination component in ReactJS from scratch . Follow this step-by-step guide to integrate Pagination component in your ReactJS project."}
-                            time={"9 min read"}
-                            link={"/"}
+                            img={TodoListJs}
+                            title={"To Do List In JavaScript"}
+                            summary={"Learn how to build To do List in JAVASCRIPT from scratch ."}
+                            time={"30 min read"}
+                            link={"https://shehab-todo-list-js.netlify.app/"}
                         />
                     </ul>
                     <h2 className='font-bold text-4xl w-full text-center my-16 mt-32 dark:text-light'>All Articles</h2>
