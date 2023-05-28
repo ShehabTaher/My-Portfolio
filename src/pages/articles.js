@@ -7,8 +7,10 @@ import React, { useRef } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
 import Article1 from '../../public/images/articles/pagination component in reactjs.jpg'
 import Article2 from '../../public/images/articles/create loading screen in react js.jpg'
-import Article3 from "../../public/images/articles/form validation in reactjs using custom react hook.png"
-import Article4 from "../../public/images/articles/smooth scrolling in reactjs.png"
+import passGenerator from "../../public/images/articles/passGenerator.jpeg"
+import qrGenerator from "../../public/images/articles/qrGenerator.jpeg"
+import Calculator from "../../public/images/articles/calculator.jpeg"
+import TransitionEffect from '@/components/TransitionEffect'
 
 const FramerImage = motion(Image)
 
@@ -39,7 +41,7 @@ const MovingImg = ({ title, img, link }) => {
             style={{x:x,y:y}} 
             initial={{opacity:0}}
             whileInView={{opacity:1, transition:{duration:0.2}}}
-            ref={imgRef} src={img} alt={title} className='z-10 w-96 h-auto hidden absolute rounded-lg' />
+            ref={imgRef} src={img} alt={title} className='z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden' />
         </Link>
     )
 }
@@ -50,9 +52,9 @@ const Article = ({ img, title, date, link }) => {
         initial={{y:200}}
         whileInView={{y:0, transition:{duration:0.5,ease:"easeInOut"}}}
         viewport={{once:true}}
-        className='relative w-full p-4 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light'>
+        className='relative w-full p-4 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light sm:flex-col'>
             <MovingImg title={title} img={img} link={link} />
-            <span className='text-primary dark:text-primaryDark font-semibold pl-4'>{date}</span>
+            <span className='text-primary dark:text-primaryDark font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm'>{date}</span>
         </motion.li>
     )
 }
@@ -62,12 +64,14 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light'>
             <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl' />
             <Link href={link} target='_blank' className='w-full cursor-pointer overflow-hidden rounded-lg inline-block'>
+
                 <FramerImage src={img} alt={title} className='w-full h-auto' whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }} 
                     priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw , 50vw'/>
             </Link>
+
             <Link href={link} target='_blank'>
-                <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline dark:text-light'>{title}</h2>
+                <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline dark:text-light xs:text-lg'>{title}</h2>
             </Link>
             <p className='text-sm mb-2 dark:text-light'>{summary}</p>
             <span className='text-primary dark:text-primaryDark font-semibold'>{time}</span>
@@ -83,11 +87,11 @@ const articles = () => {
                 <title>Shehab Taher | Articles Page</title>
                 <meta name='description' content='Page about me' />
             </Head>
-            <main className='w-full mb-16 flex flex-col items-center jus
-             overflow-hidden'>
+            <TransitionEffect />
+            <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
                 <Layout className='pt-16'>
-                    <AnimatedText text={"Code Can Change The World! "} className='mb-16' />
-                    <ul className='grid grid-cols-2 gap-16'>
+                    <AnimatedText text={"Code Can Change The World! "} className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
+                    <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
                         <FeaturedArticle
                             img={Article1}
                             title={"Build A Custom Pagination Component In Reactjs From Scratch"}
@@ -106,17 +110,35 @@ const articles = () => {
                     <h2 className='font-bold text-4xl w-full text-center my-16 mt-32 dark:text-light'>All Articles</h2>
                     <ul>
                         <Article
-                            title={"Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"}
+                            title={"Create Random Password Generator"}
+                            date={"May 24, 2023"}
+                            img={passGenerator}
+                            link={"https://shehab-random-password-generator.netlify.app/"}
+                        />
+                        
+                         <Article
+                            title={"Create QR Code Generator"}
+                            date={"May 24, 2023"}
+                            img={qrGenerator}
+                            link={"https://shehab-qr-code-generator.netlify.app/"}
+                        />
+                        
+                        <Article
+                            title={"Calculator App"}
+                            date={"May 24, 2023"}
+                            img={Calculator}
+                            link={"https://shehab-calculator.netlify.app/"}
+                        />
+                        {/*
+                        <Article
+                            title={"Fom Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"}
                             date={"May 24, 2023"}
                             img={Article3}
                             link={"/"}
-                        />
-                        <Article
-                            title={"Silky Smooth Scrolling In Reactjs: A Step-By-Step Guide For React Developers"}
-                            date={"May 24, 2023"}
-                            img={Article4}
-                            link={"/"}
-                        />
+                        /> */}
+
+                        
+                        
                     </ul>
                 </Layout>
             </main>
