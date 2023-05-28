@@ -5,7 +5,7 @@ import AnimatedText from '@/components/AnimatedText'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icon'
 import HireMe from '@/components/HireMe'
-import profilePic from "../../public/images/profile/My project (1).png"
+import profilePic from "../../public/images/profile/developer-pic-1.png"
 import lightBlub from "../../public/images/svgs/miscellaneous_icons_1.svg"
 
 
