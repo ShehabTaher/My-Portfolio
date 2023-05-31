@@ -10,6 +10,8 @@ import ShortlyPic from '../../public/images/projects/shortly.jpeg'
 import MovieWebsite from '../../public/images/projects/MovieWebsite.jpeg'
 import TodoList from '../../public/images/projects/TodoList.jpeg'
 import GYMPic from '../../public/images/projects/Gym.jpeg'
+import YouTube from '../../public/images/projects/youtube-clone.jpeg'
+import Fylo from '../../public/images/projects/Fylo.jpeg'
 import TransitionEffect from '@/components/TransitionEffect'
 
 
@@ -98,6 +100,14 @@ const projects = () => {
                                 link={"https://shehab-movieapp.netlify.app/"}
                                 github={"https://github.com/ShehabTaher/movie-website.git"}
                             />
+                            <FeaturedProject
+                                title="Youtube"
+                                img={YouTube}
+                                summary={"This website using RapidAPI Api and clone famous "}
+                                type={"React Project"}
+                                link={"https://shehab-youtube.netlify.app/"}
+                                github={"https://github.com/ShehabTaher/youtube-website.git"}
+                            />
                         </div>
                         
                         <div className="col-span-6 sm:col-span-12">
@@ -132,11 +142,11 @@ const projects = () => {
                         </div>
                         <div className="col-span-6 sm:col-span-12">
                             <Project
-                                title="Shortly Website"
-                                img={ShortlyPic}
+                                title="Fylo Website"
+                                img={Fylo}
                                 type={"Tailwind Project"}
-                                link={"https://shortly-website-xi.vercel.app/"}
-                                github={"https://github.com/ShehabTaher/Shortly-website"}
+                                link={"https://fylo-website-shehabtaher.vercel.app/"}
+                                github={"https://github.com/ShehabTaher/Fylo-Website.git"}
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-12">
